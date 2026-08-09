@@ -113,6 +113,142 @@ h1{font-size:clamp(30px,5vw,48px);margin:0 0 8px;letter-spacing:-.02em}.lead{fon
   .milestone{top:12%;width:88%;text-align:center}
 }
 
+
+body::before,
+body::after{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:-1;
+}
+body::before{
+  background:
+    radial-gradient(circle,rgba(255,255,255,.92) 0 3px,transparent 4px) 8% 14%/110px 110px,
+    radial-gradient(circle,rgba(255,255,255,.76) 0 2px,transparent 3px) 35% 22%/145px 145px,
+    radial-gradient(circle,rgba(255,255,255,.82) 0 3px,transparent 4px) 73% 11%/135px 135px;
+  animation:bgTwinkle 7s ease-in-out infinite alternate
+}
+body::after{
+  background:
+    radial-gradient(ellipse at 12% 95%,rgba(255,166,0,.34),transparent 40%),
+    radial-gradient(ellipse at 92% 4%,rgba(0,169,255,.32),transparent 38%);
+  animation:bgFloat 10s ease-in-out infinite alternate
+}
+@keyframes bgTwinkle{
+  50%{opacity:.5;transform:translateY(7px)}
+}
+@keyframes bgFloat{
+  50%{transform:translate3d(0,-8px,0) scale(1.02)}
+}
+
+.wrap{
+  position:relative;
+}
+.wrap::before{
+  content:"🌈   ✨   ⭐   💛   💫";
+  position:absolute;
+  top:-2px;left:1%;right:1%;
+  display:flex;
+  justify-content:space-around;
+  font-size:22px;
+  opacity:.34;
+  pointer-events:none;
+  animation:decorDrift 9s ease-in-out infinite alternate
+}
+@keyframes decorDrift{
+  to{transform:translateY(12px)}
+}
+
+.panel{
+  backdrop-filter:blur(4px);
+  -webkit-backdrop-filter:blur(4px);
+  box-shadow:0 12px 30px rgba(53,92,115,.10)
+}
+.hero{
+  background:
+    linear-gradient(135deg,rgba(255,255,255,.95),rgba(218,250,255,.96) 34%,rgba(235,222,255,.96) 68%,rgba(255,243,191,.96));
+  border-color:rgba(134,179,201,.45)
+}
+#game .panel{
+  background:rgba(255,255,255,.94)
+}
+.progress{
+  box-shadow:inset 0 1px 4px rgba(34,75,92,.10)
+}
+.bar{
+  background:linear-gradient(90deg,#00aebd,#4d3cff,#ff3f94,#ffb000);
+  background-size:220% 100%;
+  animation:progressRainbow 4s linear infinite
+}
+@keyframes progressRainbow{
+  to{background-position:220% 0}
+}
+.tag:nth-child(7n+1),.chip:nth-child(7n+1){background:#c8f1ff}
+.tag:nth-child(7n+2),.chip:nth-child(7n+2){background:#dfd3ff}
+.tag:nth-child(7n+3),.chip:nth-child(7n+3){background:#c9f7df}
+.tag:nth-child(7n+4),.chip:nth-child(7n+4){background:#ffe4ad}
+.tag:nth-child(7n+5),.chip:nth-child(7n+5){background:#ffcfe0}
+.tag:nth-child(7n+6),.chip:nth-child(7n+6){background:#ffe991}
+.tag:nth-child(7n),.chip:nth-child(7n){background:#c9efec}
+.step:nth-child(1){background:linear-gradient(180deg,#fff,#ffd8cf)}
+.step:nth-child(2){background:linear-gradient(180deg,#fff,#e2d8ff)}
+.step:nth-child(3){background:linear-gradient(180deg,#fff,#cff7df)}
+.answer{
+  background:linear-gradient(180deg,#fff,#fbfdff)
+}
+.answer:hover{
+  background:linear-gradient(180deg,#fff,#f0faff)
+}
+@media(max-width:600px){
+  body{
+    background:
+      radial-gradient(circle at 12% 9%, rgba(255,185,35,.72) 0 50px, transparent 52px),
+      radial-gradient(circle at 90% 18%, rgba(255,72,139,.48) 0 62px, transparent 64px),
+      linear-gradient(145deg,#c9f1ff,#e3d8ff 48%,#fff0b4 78%,#cef4df);
+  }
+  .wrap::before{font-size:18px;opacity:.26}
+}
+
+
+/* v5: по-наситена цветова палитра */
+body{
+  background-blend-mode:normal;
+}
+.wrap::before{
+  opacity:.52;
+  filter:saturate(1.35);
+}
+.hero:after{
+  opacity:.62;
+  filter:saturate(1.35);
+}
+.panel{
+  border-color:rgba(83,145,177,.52);
+}
+.tag,.chip{
+  border:1px solid rgba(70,120,150,.16);
+}
+.primary{
+  background:linear-gradient(135deg,#5144e8,#17aebb);
+  box-shadow:0 8px 18px rgba(69,78,210,.18);
+}
+.primary:hover{
+  filter:saturate(1.22) brightness(1.02);
+}
+.geo-reaction.good{
+  background:linear-gradient(135deg,#d8ffe7,#ffffff);
+}
+.geo-reaction.think{
+  background:linear-gradient(135deg,#fff0bc,#ffffff);
+}
+.feedback.good{
+  background:#e2ffe9;
+}
+.feedback.bad{
+  background:#ffe4e4;
+}
+
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.001ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important}}
 </style>
 </head>
