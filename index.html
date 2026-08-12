@@ -259,7 +259,7 @@ body{
     <div class="geo-wrap"><img class="geo" src="geo.png" alt="Гео – помощник в играта"><span class="lens" aria-hidden="true">🔎</span></div>
     <div>
       <h1>Социален детектив</h1>
-      <p class="lead">25 различни ситуации при всяко стартиране. Без таймер и без отнемане на точки.</p>
+      <p class="lead">Банка от 150 различни ситуации. При всяко стартиране се избират 25. Без таймер и без отнемане на точки.</p>
       <div class="geo-say"><b>Гео:</b> „Наблюдавай внимателно. Спри, помисли и избери най-подходящата реакция. Понякога думите са смешни, тъжни или имат преносен смисъл!“</div>
       <div class="steps"><div class="step">🛑<b>СТОП</b><span>Какво се случва?</span></div><div class="step">💭<b>ПОМИСЛИ</b><span>Как се чувстват хората?</span></div><div class="step">🎯<b>ДЕЙСТВАЙ</b><span>Кой избор помага?</span></div></div>
       <div class="tags"><span class="tag">🏠 У дома</span><span class="tag">🏫 В училище</span><span class="tag">🧑‍🤝‍🧑 С приятели</span><span class="tag">🌍 Навън</span><span class="tag">💬 Общуване</span><span class="tag">❤️ Емоции</span><span class="tag">🛡️ Лични граници</span><span class="tag">🎭 Разкази и смисъл</span></div>
@@ -417,4 +417,5 @@ function showInstall(html){$('installHelp').innerHTML=html;$('installModal').cla
 $('installBtn').addEventListener('click',installApp);$('installBtn2').addEventListener('click',installApp);$('closeInstall').addEventListener('click',closeInstall);$('installModal').addEventListener('click',e=>{if(e.target===$('installModal'))closeInstall()});
 if('serviceWorker' in navigator && location.protocol.startsWith('http')){window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));}
 </script>
+<script src="questions-extra.js"></script>
 </body></html>
